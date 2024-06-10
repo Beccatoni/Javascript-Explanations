@@ -1,0 +1,14 @@
+// chaining with math
+
+const value = 6;
+
+const double = (value) => new Promise((resolve) => resolve(value * 2));
+const addTen = (value) => new Promise((resolve) => resolve(value + 10));
+const multiplyByThree = (value) => new Promise((resolve) => resolve(value * 3));
+
+double(value)
+.then(addTen)
+.then(multiplyByThree)
+.then((result) => {
+    console.log(result);
+})
