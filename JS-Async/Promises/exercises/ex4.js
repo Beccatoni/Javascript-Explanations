@@ -10,3 +10,6 @@ let data2 = fetchSimulator('Source two', delays[0]);
 let data3 = fetchSimulator('Source three', delays[2]);
 
 Promise.race([data1, data2, data3]).then((response)=> console.log('Here is the fastest response', response))
+// Promise.race() is used to wait for only the first Promise to resolve. Once the first Promise resolves, 
+// its result is processed.
+
