@@ -6,7 +6,7 @@ let stock = {
 
 }
 
-let isShopOpen = true;
+let isShopOpen = false;
 
 let order = (time, work) => {
     return new Promise((resolve, reject)=>{
@@ -55,4 +55,8 @@ order(2000, ()=> console.log(`${stock.fruits[0]} was selected`))
     return order(2000, ()=>{
         console.log("Ice cream was served!")
     })
+})
+
+.catch(()=>{
+    console.log("Customer left")
 })
