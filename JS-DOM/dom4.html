@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="" id="block">Block for 5 seconds</a>
+    <p>
+        <button>This is a button</button>
+    </p>
+     <div id="statusMessage"></div>
+     <script>
+        document.getElementById("block")
+        .addEventListener('click', onclick);
+
+        function onclick(event){
+            event.preventDefault();
+
+            setStatusMessage('Blocking...');
+
+
+            setTimeout(function(){
+                sleep(5000);
+                setStatusMessage('Done');
+            }, 0);
+        }
+        function setStatusMessage(msg){
+            document.getElementById('statusMessage').textContent = msg;
+        }
+        function sleep(milliseconds){
+            var start = Date.now();
+            while ((Date.now() - start) < milliseconds);
+        }
+     </script>
+</body>
+</html>

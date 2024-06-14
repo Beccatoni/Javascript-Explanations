@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks</title>
+</head>
+<body>
+    <div id="demo"></div>
+
+    <script>
+        function myDisplay(some){
+            document.getElementById('demo').innerHTML = some
+        }
+
+        function myCalculator(num1, num2){
+            return `Here is the output: ${num1 + num2}`;
+        }
+        let result = myCalculator(5,7);
+        myDisplay(result);
+    </script>
+    <!-- so this has a problem that's why we are now going to use callback in the following file -->
+    <a href="./dom2.html">callback introduced</a>
+</body>
+</html>
