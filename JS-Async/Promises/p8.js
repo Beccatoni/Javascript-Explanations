@@ -16,6 +16,13 @@ return data
 })
 .then(function(data){
     console.log(`${data} 3`);
+    return data
+})
+.then(function(data){
+    return data /4;
+})
+.catch((e)=>{
+    console.log('Error ocurred', e)
 })
 
 

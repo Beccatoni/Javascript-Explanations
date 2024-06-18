@@ -1,5 +1,5 @@
 
-
+//exercises
 
 const fetchMultipleAPIs = (apis) => {
     return Promise.all(
@@ -14,10 +14,11 @@ const fetchMultipleAPIs = (apis) => {
   const apiUrls = [
     'https://jsonplaceholder.typicode.com/posts/4',
     'https://jsonplaceholder.typicode.com/posts/5',
-    'https://jsonplaceholder.typicode.com/posts/6'
+    'https://jsonplaceholder.typicode.com/posts/6',
+    'd'
   ];
   
   fetchMultipleAPIs(apiUrls)
   .then(results => console.log(results))
-  .catch(error => console.error(error))
+  .catch(error => console.error('fetch failed', error))
  
