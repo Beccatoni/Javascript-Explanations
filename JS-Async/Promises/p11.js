@@ -1,3 +1,5 @@
+// exercises
+
 function createAlarm(name, delay){
     return new Promise((resolve, reject)=>{
       if(delay < 2){
