@@ -16,5 +16,5 @@ function createAlarm(name, delay){
   .then((message)=>{
     console.log(message)
   }).catch((error)=>{
-    console.log(error);
+    console.log('Error', error);
   });

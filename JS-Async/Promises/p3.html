@@ -28,7 +28,7 @@
 </head>
 
 <body>
-    <h1>Are you doing work when the document iss ready?</h1>
+    <h1>Are you doing work when the document is ready?</h1>
     <h3>Your wrapper should resolve before the huge image finishes loading.
         Turn on <a
             href="https://developers.google.com/web/tools/chrome-devtools/profile/network-performance/network-conditions">network
@@ -58,8 +58,12 @@
         
     }
     function wrapperResolved(){
+        setTimeout(() =>{
             var completion = document.querySelector('.completion');
-            completion.innerHTML = "Resolved!";
+            completion.innerHTML = "Resolved!"
+        }, 2000)
+        
+            
         }
         ready().then(wrapperResolved());
 </script>
