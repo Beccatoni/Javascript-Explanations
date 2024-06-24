@@ -6,13 +6,32 @@ let abort = new AbortController();
 
  async  function fetchUrl (url){
     
-    let timer = setTimeout(()=>{
+    let time = setTimeout(()=>{
         abort.abort();
         console.log('Aborted')
     }, 2000)
 
-    // const result = await fetch(url);
+    
 let {signal} = abort;
+try {
+    const response = await fetch(url, {signal});
+    clearTimeout(time);
+
+    if(response.ok){
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+} catch (error) {
+    if(error.name === 'AbortError'){
+        console.log('Your response took long')
+        return 'Aborted due to timeout';
+    } else{
+        console.log('Fetch error:', error);
+        throw error;
+    }
+}
     
     return fetch(url, {signal})
     .then(response=>{

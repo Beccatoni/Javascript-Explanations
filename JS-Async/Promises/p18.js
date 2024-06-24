@@ -5,7 +5,7 @@ async function fun(){
 }
 console.log('Start');
 
-fun.then((result)=>{
+fun().then((result)=>{
     console.log(result);
 });
 // fun()

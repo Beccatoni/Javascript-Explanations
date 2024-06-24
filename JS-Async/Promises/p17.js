@@ -1,6 +1,8 @@
 const promise = new Promise((resolve, reject)=>{
     console.log('Promise created');
-    reject('First resolve');
+    // resolve('First resolve');
+    reject('First resolve')
+
 });
 
 promise
@@ -17,4 +19,4 @@ promise
 })
 .then(()=>{
     console.log('After catch');
-});
+})
